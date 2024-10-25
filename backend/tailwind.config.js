@@ -5,9 +5,16 @@ module.exports = {
         "./src/**/*.{vue,js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontWeight: {
+                semibold: '600',
+            },
+            fontFamily: {
+                mulish: ['Mulish', 'sans-serif'], 
+            },
+        },
     },
     plugins: [
-      require('@tailwindcss/forms'),
+        require('@tailwindcss/forms'),
     ],
 }
