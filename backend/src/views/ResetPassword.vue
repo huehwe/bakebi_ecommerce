@@ -48,7 +48,6 @@
 </template>
 
 <script setup>
-import { LockClosedIcon } from '@heroicons/vue/solid'
 import { Send } from 'lucide-vue-next'
 import GuestLayout from "../components/GuestLayout.vue";
 </script>
