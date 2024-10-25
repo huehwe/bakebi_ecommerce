@@ -20,7 +20,7 @@
 - **Repository:** [Bakebi Github](https://github.com/huehwe/bakebi_ecommerce)
 -    **Figma:** [Bakebi Website](https://www.figma.com/design/EldGbF5yZZJRmLRJl6XKsn/BAKEBI-Ecommerce)
 
--    **Trang giới thiệu nhóm:** [Bakebi]([https://www.notion.so/huehwe/Ph-t-tri-n-web-Nh-m-18-bfba330b55754f888a044cd0c77027e4](https://khang-le.notion.site/Pha-t-trie-n-web-Nho-m-18-12a1f0f2cb5680d99cdac89c59c79017?pvs=4))
+-    **Trang giới thiệu nhóm:** [Bakebi](https://www.notion.so/huehwe/Ph-t-tri-n-web-Nh-m-18-bfba330b55754f888a044cd0c77027e4](https://khang-le.notion.site/Pha-t-trie-n-web-Nho-m-18-12a1f0f2cb5680d99cdac89c59c79017?pvs=4))
 -    **Giảng viên:** ThS.Tạ Việt Phương
 -    **Email:** phuongtv@uit.edu.vn
 ### CÔNG NGHỆ SỬ DỤNG
