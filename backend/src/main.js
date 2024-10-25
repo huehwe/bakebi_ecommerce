@@ -1,11 +1,15 @@
-import {createApp} from 'vue'
-import store from './store'
-import router from './router'
+import { createApp } from 'vue';
+import store from './store';
+import router from './router';
 import './index.css';
+import App from './App.vue';
 
-import App from './App.vue'
+library.add(faUser);
 
-createApp(App)
-  .use(store)
-  .use(router)
-  .mount('#app')
+const app = createApp(App);
+
+app.component('font-awesome-icon', FontAwesomeIcon);
+
+app.use(store);
+app.use(router);
+app.mount('#app');
