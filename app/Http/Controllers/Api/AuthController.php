@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class AuthController extends Controller
         unset($credentials['remember']);
         if (!Auth::attempt($credentials, $remember)) {
             return response([
-                'message' => 'Tên đăng nhập và mật khẩu không chính xác'
+                'message' => 'Email or password is incorrect'
             ], 422);
         }
 
@@ -28,7 +29,7 @@ class AuthController extends Controller
         if (!$user->is_admin) {
             Auth::logout();
             return response([
-                'message' => 'Bạn không có quyền đăng nhập vào hệ thống'
+                'message' => 'You don\'t have permission to authenticate as admin'
             ], 403);
         }
         $token = $user->createToken('main')->plainTextToken;
