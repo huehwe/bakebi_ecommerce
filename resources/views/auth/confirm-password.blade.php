@@ -1,8 +1,8 @@
 <x-app-layout>
-    <div class="">
+    <div class="w-[400px] mx-auto">
 
-        <div class="">
-            {{ __('Vui lòng xác nhận mật khẩu trước khi tiếp tục.') }}
+        <div class="mb-4 text-sm text-gray-600">
+            {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
         </div>
 
         <!-- Validation Errors -->
@@ -21,7 +21,7 @@
                                 required autocomplete="current-password" />
             </div>
 
-            <div class="">
+            <div class="flex justify-end mt-4">
                 <x-button>
                     {{ __('Confirm') }}
                 </x-button>

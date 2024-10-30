@@ -1,17 +1,17 @@
 <x-app-layout>
-    <div class="">
+    <div class="w-[400px] mx-auto py-32">
 
-        <div class="">
-            {{ __('Cảm ơn bạn vì đã đăng kí! Trước khi tiếp tục, bạn có thể xác nhận email bằng cách nhấn vào liên kết mà chúng tôi vừa gửi đến email của bạn. Nếu bạn không nhận được email, chúng tôi sẵn sàng gửi lại cho bạn.') }}
+        <div class="mb-4 text-sm text-gray-600">
+            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')
-            <div class="">
-                {{ __('Chúng tôi đã gửi liên kết xác nhận mới đến email của bạn.') }}
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ __('A new verification link has been sent to the email address you provided during registration.') }}
             </div>
         @endif
 
-        <div class="">
+        <div class="mt-4 flex items-center justify-between">
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
 
@@ -25,7 +25,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <button type="submit" class="">
+                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
                     {{ __('Log Out') }}
                 </button>
             </form>

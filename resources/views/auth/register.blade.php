@@ -34,9 +34,9 @@
         </div>
 
         <button
-            class=""
+            class="btn-primary bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 w-full"
         >
-            Đăng kí
+            Signup
         </button>
     </form>
 </x-app-layout>
