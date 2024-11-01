@@ -12,8 +12,7 @@
 | :------- | :------------------- 
 | 22520495 | Trần Thị Kim Huệ       
 | 22520082 | Trần Phạm Trúc Anh 
-| 22520614 | Lê Minh Khang
-| 22520802 | Trang Thành Lợi
+
 
 ## GIỚI THIỆU ĐỒ ÁN MÔN HỌC
 -    **Đề tài:** Trang web bán bánh ngọt đa chi nhánh
