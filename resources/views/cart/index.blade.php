@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div class="">
-        <h1 class="">Sản phẩm trong giỏ hàng</h1>
+    <div class="container lg:w-2/3 xl:w-2/3 mx-auto">
+        <h1 class="text-3xl font-bold mb-6">Your Cart Items</h1>
 
         <div x-data="{
             cartItems: {{
@@ -29,34 +29,34 @@
                     <template x-for="product of cartItems" :key="product.id">
                         <div x-data="productItem(product)">
                             <div
-                                class="">
+                                class="w-full flex flex-col sm:flex-row items-center gap-4 flex-1">
                                 <a :href="product.href"
-                                   class="">
+                                   class="w-36 h-32 flex items-center justify-center overflow-hidden">
                                     <img :src="product.image" class="object-cover" alt=""/>
                                 </a>
-                                <div class="">
-                                    <div class="">
-                                        <h3 x-text=""></h3>
-                                        <span class="">
+                                <div class="flex flex-col justify-between flex-1">
+                                    <div class="flex justify-between mb-3">
+                                        <h3 x-text="product.title"></h3>
+                                        <span class="text-lg font-semibold">
                                             $<span x-text="product.price"></span>
                                         </span>
                                     </div>
-                                    <div class="">
-                                        <div class="">
-                                            Số lượng:
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center">
+                                            Qty:
                                             <input
                                                 type="number"
                                                 min="1"
                                                 x-model="product.quantity"
                                                 @change="changeQuantity()"
-                                                class=""
+                                                class="ml-3 py-1 border-gray-200 focus:border-purple-600 focus:ring-purple-600 w-16"
                                             />
                                         </div>
                                         <a
                                             href="#"
                                             @click.prevent="removeItemFromCart()"
-                                            class=""
-                                        >Xóa</a
+                                            class="text-purple-600 hover:text-purple-500"
+                                        >Remove</a
                                         >
                                     </div>
                                 </div>
@@ -67,25 +67,28 @@
                     </template>
                     <!-- Product Item -->
 
-                    <div class="">
-                        <div class="">
-                            <span class="font-semibold">Tổng tạm tính</span>
-                            <span id="cartTotal" class="" x-text="`$${cartTotal}`"></span>
+                    <div class="border-t border-gray-300 pt-4">
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Subtotal</span>
+                            <span id="cartTotal" class="text-xl" x-text="`$${cartTotal}`"></span>
                         </div>
-                        <p class="">
-                            Phí vận chuyển được tính tại thanh toán.
+                        <p class="text-gray-500 mb-6">
+                            Shipping and taxes calculated at checkout.
                         </p>
 
-                        <button type="submit" class="">
-                            Thanh toán
-                        </button>
+                        <form action="{{ route('cart.checkout') }}" method="POST">
+    @csrf
+    <button type="submit" class="btn btn-primary">
+        Checkout
+    </button>
+</form>
                     </div>
                 </div>
                 <!--/ Product Items -->
             </template>
             <template x-if="!cartItems.length">
                 <div class="text-center py-8 text-gray-500">
-                    Bạn không có sản phẩm nào trong giỏ hàng
+                    You don't have any items in cart
                 </div>
             </template>
 
