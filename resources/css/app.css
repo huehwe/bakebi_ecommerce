@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   .py-navbar-item {
     @apply py-6
@@ -27,16 +27,17 @@
     @apply pr-3
   }
 }
-
-@layer components {
+/*@layer components {
   .btn-primary {
     @apply text-white bg-purple-600 py-2 px-4 rounded shadow-md hover:bg-purple-700 active:bg-purple-800 transition-colors;
   }
-}
+}*/
 
 body {
-  background-color: #e5e7eb;
+  font-family: 'Piazzolla', serif;
+  background-color: #ffffff;
 }
+
 
 .wysiwyg-content h3,
 .wysiwyg-content h4 {
@@ -60,4 +61,77 @@ body {
 .table-sm > tbody > tr > td,
 .table-sm > thead > tr > th {
   padding: 0.25rem;
+}
+
+
+/* Tổng thể container profile */
+.profile-container {
+  max-width: 600px; /* Chiều rộng tối đa cho container trên màn hình desktop */
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Nút profile */
+.profile-detail-button {
+  width: 350px;
+  height: 52px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 52px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.profile-detail-button:hover {
+  background-color: #333 !important;
+}
+
+/* Hàng nhập liệu */
+.input-row {
+  max-width: 600px; /* Chiều rộng mặc định cho hàng nhập liệu */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+/* Ô nhập */
+.input-row .input-item {
+  width: 100%;
+  flex: 1;
+}
+
+.input-row .input-item input,
+.input-row .input-item select {
+  width: 100%; /* Đảm bảo ô nhập liệu chiếm đầy đủ chiều rộng của .input-item */
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Màn hình nhỏ */
+@media (max-width: 768px) {
+  .input-row {
+    flex-direction: column;
+  }
+  .profile-detail-button {
+    width: 100%;
+  }
+}
+
+/* Màn hình desktop */
+@media (min-width: 1025px) {
+  .profile-container {
+    max-width: 700px;
+  }
+  .input-row {
+    max-width: 700px;
+  }
 }
