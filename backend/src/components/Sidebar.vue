@@ -18,7 +18,7 @@
         Products
       </span>
     </router-link>
-    <router-link :to="{name: 'app.dashboard'}"
+     <router-link :to="{name: 'app.users'}"
                  class="">
       <span class="">
         <UsersIcon class="w-5"/>
@@ -27,7 +27,17 @@
         Users
       </span>
     </router-link>
-    <router-link :to="{name: 'app.dashboard'}"
+    
+    <router-link :to="{name: 'app.customers'}"
+                 class="">
+      <span class="">
+        <ChartBarIcon class="w-5"/>
+      </span>
+      <span class="">
+        Quản lí khách hàng
+      </span>
+    </router-link>
+    <router-link :to="{name: ''}"
                  class="">
       <span class="">
         <ChartBarIcon class="w-5"/>

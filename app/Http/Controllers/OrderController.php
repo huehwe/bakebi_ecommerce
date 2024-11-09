@@ -3,42 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Enums\OrderStatus;
-use App\Enums\PaymentStatus;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        /** @var \App\Models\User $user */
+        $user = $request->user();
+
         $orders = Order::query()
-            ->with('user')
-            ->latest()
+            ->where(['created_by' => $user->id])
+            ->orderBy('created_at', 'desc')
             ->paginate(10);
 
-        return view('admin.orders.index', compact('orders'));
+        return view('order.index', compact('orders'));
     }
 
     public function view(Order $order)
     {
-        $order->load(['user']);
-        
-        return view('admin.orders.view', [
-            'order' => $order,
-            'orderStatuses' => OrderStatus::cases(),
-            'paymentStatuses' => PaymentStatus::cases(),
-        ]);
-    }
+        /** @var \App\Models\User $user */
+        $user = \request()->user();
+        if ($order->created_by !== $user->id) {
+            return response("You don't have permission to view this order", 403);
+        }
 
-    public function updateStatus(Request $request, Order $order)
-    {
-        $validated = $request->validate([
-            'status' => ['required', 'string'],
-            'payment_status' => ['required', 'string'],
-        ]);
-
-        $order->update($validated);
-
-        return back()->with('success', 'Order status updated successfully');
+        return view('order.view', compact('order'));
     }
 }
