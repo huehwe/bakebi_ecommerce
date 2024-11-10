@@ -30,7 +30,6 @@
                 
                 <h2 class="text-[26px] font-semibold mb-4">Thông tin tài khoản</h2>
                 
-                <!-- Hàng đầu tiên: Họ và Tên -->
                 <div class="input-row mb-4">
                     <div class="input-item">
                         <x-input type="text" name="first_name" value="{{ old('first_name', $customer->first_name) }}" placeholder="Họ" class="w-full h-[50px]" />
@@ -87,7 +86,7 @@
             <div class="mt-6 w-full">
                 <form action="{{ route('profile_password.update') }}" method="post">
                     @csrf
-                    <h2 class="text-[26px] font-semibold mb-2">Cập nhật mật khẩu</h2>
+                    <h2 class="text-[26px] font-semibold mb-4">Cập nhật mật khẩu</h2>
                     <div class="input-row mb-4">
                         <div class="input-item">
                             <x-input type="password" name="old_password" placeholder="Mật khẩu hiện tại" class="w-full h-[50px]" />
@@ -103,6 +102,9 @@
                             <x-input type="password" name="new_password_confirmation" placeholder="Nhập lại mật khẩu mới" class="w-full h-[50px]" />
                         </div>
                     </div>
+                    <div class="text-sm text-center mt-4 font-mulish">
+                    <div class="text-stone-900 hover:text-gray-700 hover:underline text-right"> Quên mật khẩu? </div>
+                    </div>            
                     <div class="flex justify-center mt-6 gap-4">
                 <x-button class="profile-detail-button mt-6 text-[18px] ">Lưu thay đổi</x-button>
             </div>
